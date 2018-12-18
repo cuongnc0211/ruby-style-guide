@@ -63,7 +63,7 @@ Các bản dịch ở các ngôn ngữ khác:
 * [Tiếng Trung Phồn thể](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhTW.md)
 * [Tiếng Pháp](https://github.com/gauthier-delacroix/ruby-style-guide/blob/master/README-frFR.md)
 * [Tiếng Đức](https://github.com/arbox/de-ruby-style-guide/blob/master/README-deDE.md)
-* [*Tiếng Nhật](https://github.com/cuongnc0211/ruby-style-guide/tree/japanese)
+* [*Tiếng Nhật](https://github.com/cuongnc0211/ruby-style-guide/blob/japanese/README.ja.md)
 * [Tiếng Hàn Quốc](https://github.com/dalzony/ruby-style-guide/blob/master/README-koKR.md)
 * [Tiếng Bồ Đào Nha](https://github.com/rubensmabueno/ruby-style-guide/blob/master/README-PT-BR.md)
 * [Tiếng Nga](https://github.com/arbox/ruby-style-guide/blob/master/README-ruRU.md)
@@ -156,11 +156,8 @@ Các bản dịch ở các ngôn ngữ khác:
   class FooError < StandardError
   end
 
-  # okish
-  class FooError < StandardError; end
-
   # good
-  FooError = Class.new(StandardError)
+  class FooError < StandardError; end
   ```
 
 * <a name="no-single-line-methods"></a>
@@ -331,7 +328,7 @@ Các bản dịch ở các ngôn ngữ khác:
     calc_something_else
   end
 
-  # good - it's apparent what's going on
+  # good - it's apparent what's going on. (both are ok)
   kind = case year
          when 1850..1889 then 'Blues'
          when 1890..1909 then 'Ragtime'
@@ -347,7 +344,7 @@ Các bản dịch ở các ngôn ngữ khác:
              calc_something_else
            end
 
-  # good (and a bit more width efficient)
+  # good (and a bit more width efficient). (both are ok)
   kind =
     case year
     when 1850..1889 then 'Blues'
@@ -443,26 +440,12 @@ Các bản dịch ở các ngôn ngữ khác:
   ```
 
 * <a name="consistent-multi-line-chains"></a>
-    Với cách gọi phương thức nhiều lần liên tiếp, có hai kiểu thông dụng,
-    kiểu nào cũng được cả:
-    `.` ở đầu dòng mới (Phương án A) `.` ở cuối dòng cũ (Phương án B).
-    Mặc dù dùng kiểu nào thì cũng nên dùng nhất quán một kiểu.
-<sup>[[link](#consistent-multi-line-chains)]</sup>
+    Với cách gọi phương thức nhiều lần liên tiếp, đặt `.` ở đầu dòng mới
 
-  * **(Phương án A)**
     ```Ruby
     one.two.three
        .four
     ```
-
-  * **(Phương án B)**
-    ```Ruby
-    one.two.three.
-       four
-    ```
-
-  Xem thêm về cuộc thảo luận chọn cách nào:
-  [tại đây](https://github.com/bbatsov/ruby-style-guide/pull/176).
 
 * <a name="no-double-indent"></a>
     Khi gọi phương thức có nhiều đối số, nên xuống dòng, và các đối số này
@@ -483,14 +466,6 @@ Các bản dịch ở các ngôn ngữ khác:
         from: 'us@example.com',
         subject: 'Important message',
         body: source.text)
-  end
-
-  # good
-  def send_mail(source)
-    Mailer.deliver(to: 'bob@example.com',
-                   from: 'us@example.com',
-                   subject: 'Important message',
-                   body: source.text)
   end
 
   # good (thụt đầu dòng bình thường)
@@ -518,12 +493,6 @@ Các bản dịch ở các ngôn ngữ khác:
     'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
     'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam'
   ]
-
-  # good
-  menu_item =
-    ['Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
-     'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam']
-  ```
 
 * <a name="underscores-in-numerics"></a>
   Với số lớn, thêm dấu gạch dưới `_` cho dễ đọc.
