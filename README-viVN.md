@@ -63,12 +63,12 @@ Các bản dịch ở các ngôn ngữ khác:
 * [Tiếng Trung Phồn thể](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhTW.md)
 * [Tiếng Pháp](https://github.com/gauthier-delacroix/ruby-style-guide/blob/master/README-frFR.md)
 * [Tiếng Đức](https://github.com/arbox/de-ruby-style-guide/blob/master/README-deDE.md)
-* [Tiếng Nhật](https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md)
+* [*Tiếng Nhật](https://github.com/cuongnc0211/ruby-style-guide/tree/japanese)
 * [Tiếng Hàn Quốc](https://github.com/dalzony/ruby-style-guide/blob/master/README-koKR.md)
 * [Tiếng Bồ Đào Nha](https://github.com/rubensmabueno/ruby-style-guide/blob/master/README-PT-BR.md)
 * [Tiếng Nga](https://github.com/arbox/ruby-style-guide/blob/master/README-ruRU.md)
 * [Tiếng Tây Ban Nha](https://github.com/alemohamad/ruby-style-guide/blob/master/README-esLA.md)
-* [Tiếng Việt](https://github.com/CQBinh/ruby-style-guide/blob/master/README-viVN.md)
+* [*Tiếng Việt](https://github.com/CQBinh/ruby-style-guide/blob/master/README-viVN.md)
 
 ## Mục lục
 * [Bố cục trình bày khi viết code / Source code layout](#b%E1%BB%91-c%E1%BB%A5c-tr%C3%ACnh-b%C3%A0y-khi-vi%E1%BA%BFt-code--source-code-layout)
@@ -173,15 +173,6 @@ Các bản dịch ở các ngôn ngữ khác:
   ```Ruby
   # bad
   def too_much; something; something_else; end
-
-  # okish - dấu ; ngay sau tên hàm bắt buộc phải có
-  def no_braces_method; body end
-
-  # okish - dấu ; sau body thì không bắt buộc
-  def no_braces_method; body; end
-
-  # okish - đúng cú pháp, nhưng không có ; sau tên hàm khiến khó đọc hơn
-  def some_method() body end
 
   # good
   def some_method
